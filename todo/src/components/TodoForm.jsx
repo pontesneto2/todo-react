@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 
-const TodoForm = () => {
+const TodoForm = ({addTodo}) => {
     const [value, setValue] = useState("");
     const [category, setCategory] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!value || !category) return;
-        //adicionar todo
+        addTodo(value, category);
         //limpar os campos
         setValue("")
         setCategory("")
@@ -33,4 +33,4 @@ const TodoForm = () => {
     </div> 
 };
 
-export default TodoForm
+export default TodoForm;
